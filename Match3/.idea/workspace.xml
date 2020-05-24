@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ad2340a6-23d6-428d-a609-5e8817b5a831" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1bJwkQNgYRwSRjb9bSZW98yLhhK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Lua52/luac52.exe" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Love2D" type="#com.sylvanaar.idea.Lua.run.LuaConfigurationType" factoryName="Lua Script">
+      <module name="Match3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="C:\Users\renan.silva\LOVE\love-11.3-win64\love.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="ALTERNATE_INTERPRETER" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ad2340a6-23d6-428d-a609-5e8817b5a831" name="Default Changelist" comment="" />
+      <created>1588363647043</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588363647043</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1229" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588449013524">
+      <screen x="-1366" y="2" width="1366" height="768" />
+    </state>
+    <state x="-1229" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/-1366.2.1366.768@-1366.2.1366.768" timestamp="1588449013524" />
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/-1366.2.1366.768@0.0.1366.728" timestamp="1588364036093" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1590083515182">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728/-1366.2.1366.768@0.0.1366.728" timestamp="1590083515182" />
+    <state width="1323" height="239" key="GridCell.Tab.0.bottom" timestamp="1590283614582">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="215" key="GridCell.Tab.0.bottom/0.0.1366.728/-1366.2.1366.768@-1366.2.1366.768" timestamp="1590018976617" />
+    <state width="1323" height="215" key="GridCell.Tab.0.bottom/0.0.1366.728/-1366.2.1366.768@0.0.1366.728" timestamp="1590009170687" />
+    <state width="1323" height="239" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590283614582" />
+    <state width="1323" height="239" key="GridCell.Tab.0.center" timestamp="1590283614582">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="215" key="GridCell.Tab.0.center/0.0.1366.728/-1366.2.1366.768@-1366.2.1366.768" timestamp="1590018976617" />
+    <state width="1323" height="215" key="GridCell.Tab.0.center/0.0.1366.728/-1366.2.1366.768@0.0.1366.728" timestamp="1590009170685" />
+    <state width="1323" height="239" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590283614582" />
+    <state width="1323" height="239" key="GridCell.Tab.0.left" timestamp="1590283614582">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="215" key="GridCell.Tab.0.left/0.0.1366.728/-1366.2.1366.768@-1366.2.1366.768" timestamp="1590018976616" />
+    <state width="1323" height="215" key="GridCell.Tab.0.left/0.0.1366.728/-1366.2.1366.768@0.0.1366.728" timestamp="1590009170680" />
+    <state width="1323" height="239" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590283614582" />
+    <state width="1323" height="239" key="GridCell.Tab.0.right" timestamp="1590283614582">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="215" key="GridCell.Tab.0.right/0.0.1366.728/-1366.2.1366.768@-1366.2.1366.768" timestamp="1590018976617" />
+    <state width="1323" height="215" key="GridCell.Tab.0.right/0.0.1366.728/-1366.2.1366.768@0.0.1366.728" timestamp="1590009170686" />
+    <state width="1323" height="239" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590283614582" />
+    <state width="1323" height="239" key="GridCell.Tab.1.bottom" timestamp="1590283614583">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="239" key="GridCell.Tab.1.bottom/0.0.1366.728/-1366.2.1366.768@-1366.2.1366.768" timestamp="1588449409474" />
+    <state width="1323" height="239" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590283614583" />
+    <state width="1323" height="239" key="GridCell.Tab.1.center" timestamp="1590283614583">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="239" key="GridCell.Tab.1.center/0.0.1366.728/-1366.2.1366.768@-1366.2.1366.768" timestamp="1588449409474" />
+    <state width="1323" height="239" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1590283614583" />
+    <state width="1323" height="239" key="GridCell.Tab.1.left" timestamp="1590283614583">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="239" key="GridCell.Tab.1.left/0.0.1366.728/-1366.2.1366.768@-1366.2.1366.768" timestamp="1588449409473" />
+    <state width="1323" height="239" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1590283614583" />
+    <state width="1323" height="239" key="GridCell.Tab.1.right" timestamp="1590283614583">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="239" key="GridCell.Tab.1.right/0.0.1366.728/-1366.2.1366.768@-1366.2.1366.768" timestamp="1588449409474" />
+    <state width="1323" height="239" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1590283614583" />
+    <state x="0" y="116" width="1339" height="512" key="dock-window-1" timestamp="1588979750319">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="116" width="1339" height="512" key="dock-window-1/0.0.1366.728/-1366.2.1366.768@-1366.2.1366.768" timestamp="1588979750319" />
+    <state x="217" y="0" width="607" height="728" key="find.popup" timestamp="1590283177630">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="-1366" y="2" width="607" height="768" key="find.popup/0.0.1366.728/-1366.2.1366.768@-1366.2.1366.768" timestamp="1590009383231" />
+    <state x="217" y="0" width="607" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1590283177630" />
+    <state x="65" y="88" key="new project wizard" timestamp="1590083552554">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="88" key="new project wizard/0.0.1366.728/-1366.2.1366.768@0.0.1366.728" timestamp="1590083552554" />
+  </component>
+</project>
