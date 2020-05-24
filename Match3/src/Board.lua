@@ -14,24 +14,23 @@ function Board:init(sizeX, sizeY)
     self.initialX = 32
     self.initialY = 32
     self.highlightedBrick = nil
-    self.selectedBrickX = 1
-    self.selectedBrickY = 1
+    self.selectedBrick = nil
 end
 
 function Board:changeSelected(axis, dir)
-    self.bricks[self.selectedBrickX][self.selectedBrickY].selected = false
+    self.highlightedBrick.selected = false
     if axis == 'y' then
-        self.selectedBrickY = self.selectedBrickY + dir
+        self.highlightedBrick = self.bricks[self.highlightedBrick.indexX][self.highlightedBrick.indexY + dir]
     elseif axis == 'x' then
-        self.selectedBrickX = self.selectedBrickX + dir
+        self.highlightedBrick = self.bricks[self.highlightedBrick.indexX + dir][self.highlightedBrick.indexY]
     end
-    self.bricks[self.selectedBrickX][self.selectedBrickY].selected = true
+    self.highlightedBrick.selected = true
 
 end
 
 function Board:changeBricks(brick1, brick2)
     if brick1.enabled == true and brick2.enabled == true then
-        if math.abs((brick1.indexX + brick1.indexY) -(brick2.indexX + brick2.indexY)) > 1 then
+        if math.abs((brick1.indexX + brick1.indexY) -(brick2.indexX + brick2.indexY)) ~= 1 then
             return false
         end
         --unction Brick:init(color, x, y, indexX, indexY, selected)
@@ -41,6 +40,7 @@ function Board:changeBricks(brick1, brick2)
         brick1.color = tempBrick2.color
         brick2.color = tempBrick1.color
     end
+    return true
 end
 
 function Board:cleanMatchs(matchTable)
@@ -50,11 +50,11 @@ function Board:cleanMatchs(matchTable)
         print(v.matchs)
         print(v.axys)
         if v.axys == 'x' then
-            for i = v.x - v.matchs + 1, v.x, 1 do
+            for i = v.x, v.x - v.matchs + 1, -1 do
                 self.bricks[i][v.y].enabled = false
             end
         elseif v.axys == 'y' then
-            for i =  (v.y - v.matchs) +1, v.y, 1 do
+            for i = v.y, v.y - v.matchs + 1, -1 do
                 self.bricks[v.x][i].enabled = false
             end
         end
@@ -73,19 +73,16 @@ function Board:fillBoard()
             for j = 1, self.sizeY do
                 local y = self.initialY + (32*(j-1))
                 local x = self.initialX + (32*(i-1))
-                if(i == self.selectedBrickY and j == self.selectedBrickX) then
-                    selected = true
-                else
-                    selected = false
-                end
+
                 local color = self:randomColor()
-                b = Brick(color, x, y, i, j, selected)
+                b = Brick(color, x, y, i, j, false, true)
 
                 self.bricks[i][j] = b
             end
         end
         until(next(self:checkForMatch()) == nil)
-
+        self.highlightedBrick = self.bricks[1][1]
+        self.highlightedBrick.selected = true
 end
 
 function Board:checkForMatch()
@@ -95,35 +92,41 @@ function Board:checkForMatch()
 
     --Horizontal search
     for j = 1, self.sizeY do
+        matchs = 1
         for i = 1, self.sizeX do
-            if self.bricks[i][j].enabled == true then
-                if self.bricks[i][j].color == lastColor then
-                    matchs = matchs + 1
-                else
-                    if matchs >= 3 then
-                        local x = i == self.sizeX and i or i -1
-                        table.insert(matchTable,{x = x, y = j, matchs = matchs, axys = 'x'})
-                    end
-                    matchs = 1
-                    lastColor = self.bricks[i][j].color
+            if self.bricks[i][j].color == lastColor and self.bricks[i][j].enabled == true then
+                matchs = matchs + 1
+            else
+                if matchs >= 3 then
+                    local x =  i -1
+                    table.insert(matchTable,{x = x, y = j, matchs = matchs, axys = 'x'})
                 end
+                matchs = 1
+                lastColor = self.bricks[i][j].color
+            end
+            if i == self.sizeX and matchs >= 3 then
+                table.insert(matchTable,{x = i, y = j, matchs = matchs, axys = 'x'})
             end
         end
     end
 
---Vertical search
+    --Vertical search
     matchs = 1
     for i = 1, self.sizeX do
+        matchs = 1
         for j = 1, self.sizeY do
-            if self.bricks[i][j].color == lastColor then
+            if self.bricks[i][j].color == lastColor and self.bricks[i][j].enabled == true then
                 matchs = matchs + 1
             else
                 if matchs >= 3 then
-                    local y = j == self.sizeY and j or j -1
+                    local y = j -1
                     table.insert(matchTable, {x = i, y = y, matchs = matchs, axys = 'y'})
                 end
                 matchs = 1
                 lastColor = self.bricks[i][j].color
+            end
+            if j == self.sizeY and matchs >= 3 then
+                table.insert(matchTable,{x = i, y = j, matchs = matchs, axys = 'y'})
             end
         end
     end

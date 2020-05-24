@@ -7,14 +7,14 @@
 --
 Brick = Class{}
 
-function Brick:init(color, x, y, indexX, indexY, selected)
+function Brick:init(color, x, y, indexX, indexY, selected, enabled)
     self.color = color
     self.indexX = indexX
     self.indexY = indexY
     self.x = x
     self.y = y
     self.selected = selected
-    self.enabled= true
+    self.enabled = enabled
 end
 
 function Brick:changePosition(x, y)
@@ -23,7 +23,6 @@ function Brick:changePosition(x, y)
 end
 
 function Brick:render()
-
     love.graphics.setColor(255,255,255,255)
     if self.enabled == true then
         love.graphics.draw(gTextures['tiles'], gTiles[self.color][1], self.x, self.y)
@@ -32,5 +31,4 @@ function Brick:render()
             love.graphics.rectangle('line', self.x, self.y, 32,32)
         end
     end
-
 end

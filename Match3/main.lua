@@ -8,6 +8,11 @@
 
 require 'src/Dependencies'
 
+function love.conf(t)
+    t.console = true
+end
+
+
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
     math.randomseed(os.time())

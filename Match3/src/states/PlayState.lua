@@ -14,44 +14,54 @@ function PlayState:enter()
 end
 
 function PlayState:update(dt)
+    if love.keyboard.wasPressed('r') then
+        print(self.board.highlightedBrick.indexX)
+        print(self.board.highlightedBrick.indexY)
+        print(self.board.highlightedBrick.selected)
+    end
+
     if love.keyboard.wasPressed('up') then
-        if self.board.selectedBrickY > 1 then
+        if self.board.highlightedBrick.indexY > 1 then
             self.board:changeSelected('y', -1)
         end
     end
 
     if love.keyboard.wasPressed('down') then
-        if self.board.selectedBrickY < self.board.sizeY then
+        if self.board.highlightedBrick.indexY < self.board.sizeY then
         self.board:changeSelected('y', 1)
         end
     end
 
     if love.keyboard.wasPressed('left') then
-        if self.board.selectedBrickX > 1 then
+        if self.board.highlightedBrick.indexX > 1 then
             self.board:changeSelected('x', -1)
         end
     end
 
     if love.keyboard.wasPressed('right') then
-        if self.board.selectedBrickX < self.board.sizeX then
+        if self.board.highlightedBrick.indexX < self.board.sizeX then
             self.board:changeSelected('x', 1)
         end
     end
+    -- quando apertar enter tem que pegar o highlighted e colocar na table
+    -- se tiver um na table vida que segue
+    -- se tiver 2 -> testar se podem ser trocados
+    -- se puderem-> colocar o segundo na table e testar o match
+    -- se não puderem-> limpar a table e colocar o highlighted
 
     if love.keyboard.wasPressed('enter') or love.keyboard.wasPressed('return') then
-        if self.board.highlightedBrick == nil then
-            self.board.highlightedBrick = self.board.bricks[self.board.selectedBrickX][self.board.selectedBrickY]
-            self.board.bricks[self.board.selectedBrickX][self.board.selectedBrickY].highlighted = true
-        else
-            self.board:changeBricks(self.board.highlightedBrick, self.board.bricks[self.board.selectedBrickX][self.board.selectedBrickY])
+        if self.board.selectedBrick == nil then
+            self.board.selectedBrick = self.board.highlightedBrick
+        elseif self.board:changeBricks(self.board.selectedBrick, self.board.highlightedBrick) == true then
             local matchTable = self.board:checkForMatch()
             if next(matchTable) ~= nil then
                 self.board:cleanMatchs(matchTable)
-                self.board:generateMissingBricks()
             else
-                self.board:changeBricks(self.board.bricks[self.board.selectedBrickX][self.board.selectedBrickY], self.board.highlightedBrick)
+                self.board:changeBricks(self.board.selectedBrick, self.board.highlightedBrick)
             end
-            self.board.highlightedBrick = nil
+            self.board.selectedBrick = nil
+            else
+            self.board.selectedBrick = self.board.highlightedBrick
         end
     end
 end
