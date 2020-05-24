@@ -63,6 +63,37 @@ end
 
 
 function Board:generateMissingBricks()
+    for i = 1, self.sizeX do
+        for j = 1, self.sizeY do
+            if self.bricks[i][j].enabled == false then
+                self.bricks[i][j].color = self:randomColor()
+                self.bricks[i][j].enabled = true
+            end
+        end
+    end
+
+end
+
+function Board:cleanSpaces()
+    for i = 1, self.sizeX do
+        for j = self.sizeY, 1, -1  do
+            if self.bricks[i][j].enabled == false then
+                --loop through the smaller y and find the first enabled
+                local oldBrick = self.bricks[i][j]
+                local changed = false
+                for y = j-1, 1, -1 do
+                    if self.bricks[i][y].enabled == true and changed == false then
+                        local newBrick = self.bricks[i][y]
+
+                        newBrick.enabled = false
+                        oldBrick.color = newBrick.color
+                        oldBrick.enabled = true
+                        changed = true
+                    end
+                end
+            end
+        end
+    end
 
 end
 
