@@ -57,11 +57,11 @@ function PlayState:update(dt)
             if next(matchTable) ~= nil then
                 --do
                 repeat
-                self.board:cleanMatchs(matchTable)
-                self.board:cleanSpaces()
-                self.board:generateMissingBricks()
-                matchTable = self.board:checkForMatch()
-                until(next(matchTable) ~= nil)
+                    self.board:cleanMatchs(matchTable)
+                    self.board:cleanSpaces()
+                    self.board:generateMissingBricks()
+                    matchTable = self.board:checkForMatch()
+                until(table.maxn(matchTable) == 0)
             else
                 self.board:changeBricks(self.board.selectedBrick, self.board.highlightedBrick)
             end
